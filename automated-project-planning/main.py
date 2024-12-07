@@ -13,7 +13,7 @@ import pandas as pd
 
 load_dotenv()
 
-print(f"Model: {os.environ["OPENAI_MODEL_NAME"]}")
+print(f"Model: {os.environ['OPENAI_MODEL_NAME']}")
 # print(f"API: {os.environ["OPENAI_API_KEY"]}")
 
 # Define file paths for YAML configurations
