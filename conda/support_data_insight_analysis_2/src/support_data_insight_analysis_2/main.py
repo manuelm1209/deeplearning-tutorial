@@ -35,7 +35,7 @@ def train():
         "topic": "AI LLMs"
     }
     try:
-        SupportDataInsightAnalysis2().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        SupportDataInsightAnalysis2().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2])
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
@@ -58,11 +58,13 @@ def test():
         "topic": "AI LLMs"
     }
     try:
-        SupportDataInsightAnalysis2().crew().test(n_iterations=2,openai_model_name="gpt-4o-mini")
-        # SupportDataInsightAnalysis2().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
+        # SupportDataInsightAnalysis2().crew().test(n_iterations=2,openai_model_name="gpt-4o-mini")
+        SupportDataInsightAnalysis2().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
     
     
-test()
+run()
+# test()
+# train()
