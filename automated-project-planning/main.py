@@ -1,7 +1,7 @@
 import os
 import yaml
 from dotenv import load_dotenv
-from crewai import Agent, Task, Crew
+from crewai import Agent, Task, Crew, LLM
 
 from typing import List
 from pydantic import BaseModel, Field
@@ -15,6 +15,11 @@ load_dotenv()
 
 print(f"Model: {os.environ['OPENAI_MODEL_NAME']}")
 # print(f"API: {os.environ["OPENAI_API_KEY"]}")
+
+llm = LLM(
+    model="ollama/llama3.1",
+    base_url="http://localhost:11434"
+)
 
 # Define file paths for YAML configurations
 files = {
